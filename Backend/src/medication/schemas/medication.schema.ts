@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Schema } from "mongoose";
 import { ReminderDTO } from "../dto/reminder.dto";
 import { reminderSchema } from "./reminder.schema";

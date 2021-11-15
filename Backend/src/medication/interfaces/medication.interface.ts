@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Document } from "mongoose";
 import { ReminderDTO } from "../dto/reminder.dto";
 

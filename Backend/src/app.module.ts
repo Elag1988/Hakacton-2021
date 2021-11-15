@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
@@ -6,6 +7,7 @@ import { UserModule } from './user/user.module';
 import { MedicationModule } from './medication/medication.module';
 import { BirthControlModule } from './birth-control/birth-control.module';
 import { NotificationModule } from './notification/notification.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -16,6 +18,7 @@ import { NotificationModule } from './notification/notification.module';
     MedicationModule,
     BirthControlModule,
     NotificationModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
