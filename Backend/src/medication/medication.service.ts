@@ -12,10 +12,21 @@ export class MedicationService {
         const medication = await this.medicationModel.find();
         return medication; 
     }
+    async getMedication(medicationId: string): Promise<IMedication>{
+        const medication = await this.medicationModel.findById(medicationId);
+        return medication; 
+    }    
     async createMedication(createMedicationDTO:MedicationDTO): Promise<IMedication>{
         const medication = await new this.medicationModel(createMedicationDTO);
         await medication.save();
         return medication; 
     }
-    
+    async updateMedication(medicationId: string, createMedicationDTO:MedicationDTO): Promise<IMedication>{
+        const medication = await this.medicationModel.findByIdAndUpdate(medicationId, createMedicationDTO );
+        return medication;
+    }  
+    async deteletMedication(medicationId: string): Promise<IMedication>{
+        const medication = await this.medicationModel.findByIdAndDelete(medicationId);
+        return medication;
+    }  
 }
