@@ -1,0 +1,30 @@
+input{
+  display: block;
+
+  border-radius: 100px;
+
+}
+h1{
+  text-align: center;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+.fila{
+ display: grid;
+
+}
+select{
+  border-radius: 100px;
+  height: 3.8rem;
+  margin-bottom: 1rem;
+}
+.contenedor-btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.btn{
+  border-radius: 100px;
+  width: 25%;
+  height: 4vw;
+}
