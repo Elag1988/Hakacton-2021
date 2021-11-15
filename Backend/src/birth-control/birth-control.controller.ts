@@ -7,7 +7,7 @@ export class BirthControlController {
     constructor(private readonly birthControlService:BirthControlService ){}
 
     @Get()
-    async getMedications(@Res()res){
+    async getBcontrols(@Res()res){
         const bcontrol = await this.birthControlService.getAllBControl();
         return res.status(HttpStatus.OK).json({
             message:'Birth Control listed',
@@ -15,10 +15,10 @@ export class BirthControlController {
         });  
     }
     @Get('/:bcrontrolId')
-    async getMedication(@Res() res, @Param('bcontrolId')id){
+    async getBC(@Res() res, @Param('bcontrolId')id){
         const bcontrol = await this.birthControlService.getBControl(id);
         if(!bcontrol){
-            throw new NotFoundException('Student does not exists');
+            throw new NotFoundException('Control does not exists');
         }
 
         return res.status(HttpStatus.OK).json({
@@ -26,11 +26,10 @@ export class BirthControlController {
             data: bcontrol
         });
 
-
     }
 
     @Post('create')
-    async createNewMedication(@Res() res, @Body() createBirthControlDTO:BirthControlDTO  ){
+    async createNewBcontrol(@Res() res, @Body() createBirthControlDTO:BirthControlDTO  ){
         
         const bcontrol = await this.birthControlService.createBControl(createBirthControlDTO);
 
@@ -41,7 +40,7 @@ export class BirthControlController {
 
     }
     @Put('/update/:bcrontrolId')
-    async updateMedication(  @Res() res, @Body() createBirthControlDTO:BirthControlDTO , @Param('bcrontrolId') id){
+    async updateBcontrol(  @Res() res, @Body() createBirthControlDTO:BirthControlDTO , @Param('bcrontrolId') id){
         const bcontrol = await this.birthControlService.updateBControln(id, createBirthControlDTO);
 
         if(!bcontrol){
@@ -54,7 +53,7 @@ export class BirthControlController {
         });
     }
     @Delete('/delete/:bcrontrolId')
-    async deleteMedication(  @Res() res, @Param('bcrontrolId') id){
+    async deleteBcontrol(  @Res() res, @Param('bcrontrolId') id){
         const bcontrol = await this.birthControlService.deteletBControl(id);
 
         if(!bcontrol){
