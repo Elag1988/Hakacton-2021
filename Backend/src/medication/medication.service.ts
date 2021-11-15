@@ -8,6 +8,10 @@ import { IMedication } from './interfaces/medication.interface';
 export class MedicationService {
     constructor(@InjectModel('medication') private readonly medicationModel: Model<IMedication>){}
 
+    async getAllMedication(): Promise<IMedication[]>{
+        const medication = await this.medicationModel.find();
+        return medication; 
+    }
     async createMedication(createMedicationDTO:MedicationDTO): Promise<IMedication>{
         const medication = await new this.medicationModel(createMedicationDTO);
         await medication.save();
