@@ -1,0 +1,20 @@
+<div class="col-md-4" *ngFor = "let medication of medication">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            {{medication.name}}
+            <button class= "btn btn-danger" (click)="deleteMedication(medication.id)">
+                <i class = "far fa-trash-alt"></i>
+            </button>
+        </div>
+
+        <img [src]="medication.image" class = "card-img-top">
+
+        <div class="card-body">
+            <p>{{medication.description}}</p>
+            <a routerLink= "['/medication/edit', medication.id]" class ="btn btn-info btn_block">
+                Editar Medicamentos
+            </a>
+
+        </div>
+    </div>
+</div>
